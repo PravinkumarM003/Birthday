@@ -976,45 +976,13 @@ window.addEventListener('touchstart', e => {
 }, { passive: true });
 
 // ──────────────────────────────────────────────────
-//  BACKGROUND MUSIC — YouTube IFrame API
+//  BACKGROUND MUSIC — Local Audio
 // ──────────────────────────────────────────────────
-let ytPlayer = null;
-let ytReady = false;
-
-window.onYouTubeIframeAPIReady = function () {
-  ytPlayer = new YT.Player('ytPlayer', {
-    videoId: 'O2WN6glcSsM',
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      disablekb: 1,
-      fs: 0,
-      iv_load_policy: 3,
-      modestbranding: 1,
-      rel: 0,
-      loop: 1,
-      playlist: 'O2WN6glcSsM',
-    },
-    events: {
-      onReady(e) {
-        ytReady = true;
-        e.target.setVolume(55);
-      },
-      onStateChange(e) {
-        if (e.data === YT.PlayerState.ENDED) {
-          ytPlayer.seekTo(0);
-          ytPlayer.playVideo();
-        }
-      }
-    }
-  });
-};
-
 function tryPlayMusic() {
-  if (ytReady && ytPlayer && typeof ytPlayer.playVideo === 'function') {
-    ytPlayer.playVideo();
-  } else {
-    setTimeout(tryPlayMusic, 500);
+  const bgMusic = $('bgMusic');
+  if (bgMusic) {
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(e => console.warn('Autoplay blocked:', e));
   }
 }
 
