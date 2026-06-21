@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Happy Birthday Brindha ✨ | A Special Surprise</title>
+  <meta name="description" content="A luxury digital birthday celebration crafted with love for Brindha.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Outfit:wght@200;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── GLOBAL LAYERS ── -->
+  <canvas id="bgCanvas"></canvas>
+  <div id="auroraLayer"></div>
+  <div id="cursorGlow"></div>
+  <div id="cursorTrailContainer"></div>
+  <div id="particleLayer"></div>
+  <div id="firefliesLayer"></div>
+
+  <!-- ── ACHIEVEMENT TOAST ── -->
+  <div id="achievementToast" class="achievement-toast">
+    <span id="achievementIcon">🏆</span>
+    <div>
+      <div id="achievementTitle" class="ach-title">Achievement Unlocked!</div>
+      <div id="achievementDesc" class="ach-desc"></div>
+    </div>
+  </div>
+
+  <!-- ── MUSIC TOGGLE ── -->
+  
+
+  <!-- ── MOBILE MUSIC PROMPT ── -->
+  
+
+  <!-- ── SECRET BUTTON ── -->
+  <button id="secretBtn" class="secret-btn" title="Easter Egg!" aria-label="Secret surprise">✦</button>
+
+  <!-- ============================
+       SECTION 1 — INTRO
+  ============================== -->
+  <section id="section1" class="page active">
+    <div class="aurora-rings">
+      <div class="aurora-ring r1"></div>
+      <div class="aurora-ring r2"></div>
+      <div class="aurora-ring r3"></div>
+    </div>
+
+    <div class="floating-stars-field" id="starsField"></div>
+    <div class="shooting-stars" id="shootingStars"></div>
+    <div class="lanterns-field" id="lanternsIntro"></div>
+    <div class="clouds-field" id="cloudsField"></div>
+    <div class="balloons-field" id="balloonsField"></div>
+
+    <!-- Countdown overlay -->
+    <div id="countdownOverlay" class="countdown-overlay">
+      <div id="countdownNumber" class="countdown-number">3</div>
+      <p class="countdown-label">Get Ready…</p>
+    </div>
+
+    <!-- Main intro card -->
+    <div class="intro-wrapper" id="introWrapper">
+      <div class="glass-card intro-card">
+        <div class="card-shine"></div>
+        <div class="intro-emoji-ring">
+          <span>🎉</span><span>💖</span><span>🌟</span><span>🎂</span><span>✨</span><span>🎈</span>
+        </div>
+        <p class="intro-sub outfit-light" id="introDate">22 · June · 2026</p>
+        <h1 class="intro-title" id="introTitle"><span id="typingSpan"></span><span class="cursor-blink">|</span></h1>
+        <p class="intro-tagline" id="introTagline"></p>
+        <div class="intro-divider"><span>✦</span></div>
+        <p class="intro-msg outfit-light">A luxury birthday experience, crafted just for you.</p>
+        <button class="glow-btn primary-btn" id="startBtn">
+          <span class="btn-glow-ring"></span>
+          <span class="btn-text">Start The Surprise ✨</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 2 — CAKE
+  ============================== -->
+  <section id="section2" class="page">
+    <div class="aurora-rings muted">
+      <div class="aurora-ring r1"></div>
+      <div class="aurora-ring r2"></div>
+    </div>
+    <div class="cake-bg-glow"></div>
+
+    <div class="cake-section-content">
+      <h2 class="section-heading">
+        <span class="sh-emoji">🎂</span>
+        <span class="sh-text">Your Birthday Cake</span>
+        <span class="sh-emoji">🕯️</span>
+      </h2>
+
+      <!-- 3D Scene -->
+      <div class="cake-stage" id="cakeStage">
+        <!-- Table Surface -->
+        <div class="table-surface">
+          <div class="table-shadow"></div>
+        </div>
+
+        <!-- Knife -->
+        <div class="knife-wrap" id="knifeWrap">
+          <div class="knife-blade"></div>
+          <div class="knife-handle"></div>
+        </div>
+
+        <!-- Cake Assembly -->
+        <div class="cake-3d" id="cake3d">
+          <!-- Layer 3 (Bottom) -->
+          <div class="cake-tier tier-3">
+            <div class="tier-top"></div>
+            <div class="tier-side"></div>
+            <div class="tier-front"></div>
+            <div class="frosting-drip fd1"></div>
+            <div class="frosting-drip fd2"></div>
+            <div class="frosting-drip fd3"></div>
+            <div class="tier-deco deco-flowers"></div>
+          </div>
+          <!-- Layer 2 (Middle) -->
+          <div class="cake-tier tier-2">
+            <div class="tier-top"></div>
+            <div class="tier-side"></div>
+            <div class="tier-front"></div>
+            <div class="frosting-drip fd1"></div>
+            <div class="frosting-drip fd2"></div>
+            <div class="tier-deco deco-dots"></div>
+          </div>
+          <!-- Layer 1 (Top) -->
+          <div class="cake-tier tier-1">
+            <div class="tier-top"></div>
+            <div class="tier-side"></div>
+            <div class="tier-front"></div>
+            <div class="tier-topper">
+              <span class="topper-text">Brindha</span>
+            </div>
+          </div>
+          <!-- Candles -->
+          <div class="candles-row" id="candlesRow">
+            <div class="candle-wrap" data-i="0"><div class="candle-body cb1"></div><div class="candle-flame"><div class="flame-inner"></div><div class="flame-glow"></div></div><div class="smoke-wrap"></div></div>
+            <div class="candle-wrap" data-i="1"><div class="candle-body cb2"></div><div class="candle-flame"><div class="flame-inner"></div><div class="flame-glow"></div></div><div class="smoke-wrap"></div></div>
+            <div class="candle-wrap" data-i="2"><div class="candle-body cb3"></div><div class="candle-flame"><div class="flame-inner"></div><div class="flame-glow"></div></div><div class="smoke-wrap"></div></div>
+            <div class="candle-wrap" data-i="3"><div class="candle-body cb4"></div><div class="candle-flame"><div class="flame-inner"></div><div class="flame-glow"></div></div><div class="smoke-wrap"></div></div>
+            <div class="candle-wrap" data-i="4"><div class="candle-body cb5"></div><div class="candle-flame"><div class="flame-inner"></div><div class="flame-glow"></div></div><div class="smoke-wrap"></div></div>
+          </div>
+        </div><!-- /.cake-3d -->
+
+        <!-- Cut halves (hidden until cut) -->
+        <div class="cake-cut-halves" id="cakeCutHalves">
+          <div class="cake-half-left"></div>
+          <div class="cake-half-right"></div>
+        </div>
+      </div><!-- /.cake-stage -->
+
+      <div class="cake-controls" id="cakeControls">
+        <p class="cake-hint">Click the candles to blow them out first! 💨</p>
+        <button class="glow-btn secondary-btn" id="cutCakeBtn" disabled>
+          <span class="btn-glow-ring"></span>
+          <span class="btn-text">Cut The Cake 🔪</span>
+        </button>
+      </div>
+
+      <div class="wish-reveal" id="wishReveal">
+        <h3 class="wish-text">Make a Wish, Brindha ✨</h3>
+        <p class="wish-sub">Close your eyes and wish for something wonderful…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 3 — GIFTS
+  ============================== -->
+  <section id="section3" class="page">
+    <div class="aurora-rings muted">
+      <div class="aurora-ring r1"></div>
+      <div class="aurora-ring r2"></div>
+    </div>
+
+    <div class="gifts-section-content">
+      <div class="glass-card wishes-card">
+        <div class="card-shine"></div>
+        <h2 class="section-title great-vibes">Happy Birthday, Brindha!</h2>
+        <p class="wishes-body">Wishing you happiness, great health, boundless success, and endless smiles. May this year bring wonderful opportunities and beautiful moments that take your breath away.</p>
+      </div>
+
+      <p class="gift-prompt">Click each gift to unwrap your surprises 🎁</p>
+
+      <div class="gifts-grid">
+        <!-- Gift 1 -->
+        <div class="gift-item" id="gift1" data-idx="0">
+          <div class="gift-3d">
+            <div class="gift-lid"><div class="lid-bow"><span class="bow-left"></span><span class="bow-right"></span></div></div>
+            <div class="gift-box-body">
+              <div class="gift-ribbon-v"></div>
+              <div class="gift-ribbon-h"></div>
+              <div class="gift-face gift-face-front"></div>
+              <div class="gift-face gift-face-left"></div>
+              <div class="gift-face gift-face-right"></div>
+            </div>
+          </div>
+          <div class="gift-label">Success & Achievement 🏆</div>
+          <div class="gift-popup hidden" id="gpop0">
+            <div class="gpop-inner">
+              <span class="gpop-emoji">🏆</span>
+              <p>"May every goal you set become a trophy on your shelf. You are destined for greatness, Brindha!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gift 2 -->
+        <div class="gift-item" id="gift2" data-idx="1">
+          <div class="gift-3d">
+            <div class="gift-lid"><div class="lid-bow"><span class="bow-left"></span><span class="bow-right"></span></div></div>
+            <div class="gift-box-body">
+              <div class="gift-ribbon-v"></div>
+              <div class="gift-ribbon-h"></div>
+              <div class="gift-face gift-face-front"></div>
+              <div class="gift-face gift-face-left"></div>
+              <div class="gift-face gift-face-right"></div>
+            </div>
+          </div>
+          <div class="gift-label">Happiness & Smiles 😊</div>
+          <div class="gift-popup hidden" id="gpop1">
+            <div class="gpop-inner">
+              <span class="gpop-emoji">😊</span>
+              <p>"Your smile lights up every room. May joy follow you like sunshine follows the morning. Happy Birthday!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gift 3 -->
+        <div class="gift-item" id="gift3" data-idx="2">
+          <div class="gift-3d">
+            <div class="gift-lid"><div class="lid-bow"><span class="bow-left"></span><span class="bow-right"></span></div></div>
+            <div class="gift-box-body">
+              <div class="gift-ribbon-v"></div>
+              <div class="gift-ribbon-h"></div>
+              <div class="gift-face gift-face-front"></div>
+              <div class="gift-face gift-face-left"></div>
+              <div class="gift-face gift-face-right"></div>
+            </div>
+          </div>
+          <div class="gift-label">Good Health 🌸</div>
+          <div class="gift-popup hidden" id="gpop2">
+            <div class="gpop-inner">
+              <span class="gpop-emoji">🌸</span>
+              <p>"Wishing you a life full of vibrant energy, radiant health, and blooming wellbeing every single day!"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gift 4 -->
+        <div class="gift-item" id="gift4" data-idx="3">
+          <div class="gift-3d">
+            <div class="gift-lid"><div class="lid-bow"><span class="bow-left"></span><span class="bow-right"></span></div></div>
+            <div class="gift-box-body">
+              <div class="gift-ribbon-v"></div>
+              <div class="gift-ribbon-h"></div>
+              <div class="gift-face gift-face-front"></div>
+              <div class="gift-face gift-face-left"></div>
+              <div class="gift-face gift-face-right"></div>
+            </div>
+          </div>
+          <div class="gift-label">Dreams Come True ✨</div>
+          <div class="gift-popup hidden" id="gpop3">
+            <div class="gpop-inner">
+              <span class="gpop-emoji">✨</span>
+              <p>"Every dream you carry deserves to come true. Believe in yourself — the universe is already conspiring in your favor!"</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.gifts-grid -->
+
+      <!-- ── SHARED GIFT POPUP OVERLAY ── -->
+      <div id="giftPopupOverlay" class="gift-overlay-wrap" style="display:none">
+        <div class="gift-overlay-card">
+          <div class="card-shine"></div>
+          <span id="giftOverlayEmoji" class="gift-overlay-emoji"></span>
+          <p id="giftOverlayMsg" class="gift-overlay-msg"></p>
+          <button class="glow-btn secondary-btn gift-overlay-close" id="overlayCloseBtn">
+            <span class="btn-text">Beautiful 💖</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="gifts-continue hidden" id="giftsContinue">
+        <button class="glow-btn primary-btn" id="toFinaleBtn">
+          <span class="btn-glow-ring"></span>
+          <span class="btn-text">See The Grand Finale 🎆</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 4 — GRAND FINALE
+  ============================== -->
+  <section id="section4" class="page">
+    <canvas id="finaleCanvas"></canvas>
+    <div class="lanterns-finale" id="lanternsFinale"></div>
+    <div class="stars-text-canvas-wrap">
+      <canvas id="starsTextCanvas"></canvas>
+    </div>
+
+    <div class="finale-content">
+      <div class="finale-glass">
+        <div class="card-shine"></div>
+        <p class="finale-sub great-vibes">Thank You For Being An Amazing Friend</p>
+        <h1 class="finale-title" id="finaleTitle"></h1>
+        <div class="finale-emojis">
+          <span>🎂</span><span>🎁</span><span>🎉</span><span>🥳</span><span>💖</span><span>🌟</span>
+        </div>
+        <p class="finale-msg outfit-light">With all the love in the world — Happy Birthday, Brindha! 🎀</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── YOUTUBE PLAYER (hidden background music) ── -->
+  <div id="ytPlayer" style="display:none; pointer-events:none; position:absolute; width:1px; height:1px;"></div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
